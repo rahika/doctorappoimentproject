@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2> APPOIMENT LIST </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Name</th>
+        <th>Phone</th>
+         <th>Email</th>
+         <th>Date</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for row in dataread %}
+      <tr>
+        <td>{{ row.sno }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.phone_num }}</td>
+         <td>{{ row.email }}</td>
+         <td>{{ row.date }}</td>
+        <td><a href="http://127.0.0.1:5000/edit"><button> Update </button></a></td>
+        <td><a href="http://127.0.0.1:5000/delete"><button> Delete </button></a></td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+  <section class="book" id="book"><a href="http://127.0.0.1:5000">
+    <input type="submit" value="Back" class="btn"></a>
+  </section>
+
+</div>
+
+</body>
+</html>

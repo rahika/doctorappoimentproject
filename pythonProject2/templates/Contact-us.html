@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+       <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+
+<section class="book" id="book"><a href="http://127.0.0.1:5000">
+    <input type="submit" value="Back" class="btn"></a>
+
+ {% with msg=get_flashed_messages() %}
+    {% if msg %}
+    {% for m in msg %}
+    {{m}}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <h1 class="heading"> <span>book</span> now</h1>
+
+    <div class="row">
+
+
+
+        <form action="/contacts_us" method="post">
+            <h3>book appointment</h3>
+            <input type="text" placeholder="your name" name="name" class="box">
+            <input type="number" placeholder="your number" name="phone" class="box">
+            <input type="email" placeholder="your email" name="email" class="box">
+            <input type="date" name="date" class="box">
+             <a href="http://127.0.0.1:5000/book_appoiment">
+            <input type="submit" value="book now" class="btn">
+            </a>
+        </form>
+
+    </div>
+
+</section>
+
+</body>
+</html>

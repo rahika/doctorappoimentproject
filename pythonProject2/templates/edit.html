@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+
+</head>
+<body>
+<h1>monika</h1>
+{% for row in dataread %}
+
+<form action='/edit' method = "POST">
+
+  <input type = "text" name = "name" value="{{row.name}}"/>
+  <input type = "integer" name = "phone"  value="{{row.phone}}"/>
+   <input type = "text" name = "email" value="{{row.email}}"/>
+     <input type = "date" name = "date" value="{{row.date}}"/>
+  <input type = "submit" value = "Submit" />
+
+</form>
+{% endfor %}
+</body>
+</html>
